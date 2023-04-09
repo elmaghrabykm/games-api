@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    user: "501"
+    container_name: mongoGamesApiDB
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE= Games
+    volumes:
+      - ./gamesData:/data/db
